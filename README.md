@@ -41,24 +41,58 @@ Hello World!
 My name is Basti
 My name is Basti
 
-## 4. os,sys import
-The test.py scirpt has os,sys argument.  
+## 4. import os,sys 
+The test.py scirpt has os,sys imported.  
 console: pyinstaller --onefile --console test.py  
 test.exe -> 10.8 MB  
-open cmd:  
-C:\Users\ll_stsekeid\Desktop\Pyinstaller>test.exe 1
-Current directory:  C:\Users\ll_stsekeid\Desktop\Pyinstaller
-usage: test.exe [-h] iRequestType
+open cmd:   
+C:\Users\ll_stsekeid\Desktop\Pyinstaller>test.exe 1  
+Current directory:  C:\Users\ll_stsekeid\Desktop\Pyinstaller  
+usage: test.exe [-h] iRequestType  
+  
+CRO MXEval Test Release v1.0  
+  
+positional arguments:  
+  iRequestType  Select number 1 to process MXEval  
+                functionalities! (1)  
+  
+optional arguments:  
+  -h, --help    show this help message and exit  
+Hello World!  
+My name is Basti1  
+My name is Basti1  
 
-CRO MXEval Test Release v1.0
+## 5. import pandas, h5py (input vehicle data)
+### first try
+The test.py scirpt has pandas, h5py imported.   
+console: pyinstaller --onefile --console test.py   
+test.exe -> 382.5 MB   
+open cmd:   
+C:\Users\ll_stsekeid\Desktop\Pyinstaller>test.exe 1  
+nothing happens! 
 
-positional arguments:
-  iRequestType  Select number 1 to process MXEval
-                functionalities! (1)
+### second try
+The test.py scirpt has pandas, h5py imported.  
+Modified test.spec with hiddenimports=['h5py']  
+console: pyinstaller --onefile --top-level=DEBUG test.spec
+test.exe -> 382.5 MB
+C:\Users\ll_stsekeid\Desktop\Pyinstaller>test.exe 1  
+nothing happens! 
 
-optional arguments:
-  -h, --help    show this help message and exit
-Hello World!
-My name is Basti1
-My name is Basti1
+### third try
+The test.py scirpt has pandas, h5py imported.  
+Modified test.spec  
+from PyInstaller.utils.hooks import collect_submodules  
+
+hidden_imports = collect_submodules('h5py')  
+
+a = Analysis(['test.py'],  
+            binaries=None,  
+            datas=[],  
+            hiddenimports=hidden_imports,  
+			
+console: pyinstaller --onefile --top-level=DEBUG test.spec  
+test.exe -> 382.6 MB  
+C:\Users\ll_stsekeid\Desktop\Pyinstaller>test.exe 1  
+nothing happens! 
 

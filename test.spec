@@ -2,12 +2,16 @@
 
 block_cipher = None
 
+from PyInstaller.utils.hooks import collect_submodules
+
+hidden_imports = collect_submodules('h5py')
+
 
 a = Analysis(['test.py'],
              pathex=['C:\\Users\\ll_stsekeid\\Desktop\\Pyinstaller'],
              binaries=[],
              datas=[],
-             hiddenimports=[],
+             hiddenimports=hidden_imports,
              hookspath=[],
              runtime_hooks=[],
              excludes=[],
