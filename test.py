@@ -10,7 +10,8 @@ Created on Fri Nov 27 13:27:18 2020
 
 def main():
     print('Hello World!')
-
+    arg = input()
+    print(arg)
 
 
 

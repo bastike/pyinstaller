@@ -6,4 +6,16 @@ Python version is 3.8.6 and windows Version is 10.0.18363.1198.
 ## 1. Hello World!
 The test.py scirpt has only a print('Hello World').
 console: pyinstaller --onefile --console test.py
-dobble click on test.exe -> Hello World!
+open with cmd: 
+C:\Users\ll_stsekeid\Desktop\Pyinstaller>test.exe 
+Hello World!
+
+## 2. User Input!
+The test.py scirpt has user input as input(arg).
+console: pyinstaller --onefile --console test.py
+open cmd:
+C:\Users\ll_stsekeid\Desktop\Pyinstaller>test.exe
+Hello World!
+My name is Basti
+My name is Basti
+
