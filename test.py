@@ -5,6 +5,8 @@ Created on Fri Nov 27 13:27:18 2020
 @author: ll_stsekeid
 """
 import argparse
+import os,inspect
+
 
 
 
@@ -26,6 +28,11 @@ args = parser.parse_args()
 
 
 def main():
+    # current directory path
+    sCurrentDir = os.path.dirname(os.path.abspath(inspect.getfile(inspect.currentframe())))
+    # current parent directory path
+    sParentDir = os.path.dirname(sCurrentDir)
+    print('Current directory: ',sCurrentDir)
     parser.print_help()
     print('Hello World!')
     arg = input()

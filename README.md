@@ -41,6 +41,24 @@ Hello World!
 My name is Basti
 My name is Basti
 
- 
+## 4. os,sys import
+The test.py scirpt has os,sys argument.  
+console: pyinstaller --onefile --console test.py  
+test.exe -> 10.8 MB  
+open cmd:  
+C:\Users\ll_stsekeid\Desktop\Pyinstaller>test.exe 1
+Current directory:  C:\Users\ll_stsekeid\Desktop\Pyinstaller
+usage: test.exe [-h] iRequestType
 
+CRO MXEval Test Release v1.0
+
+positional arguments:
+  iRequestType  Select number 1 to process MXEval
+                functionalities! (1)
+
+optional arguments:
+  -h, --help    show this help message and exit
+Hello World!
+My name is Basti1
+My name is Basti1
 
