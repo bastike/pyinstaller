@@ -4,11 +4,29 @@ Created on Fri Nov 27 13:27:18 2020
 
 @author: ll_stsekeid
 """
+import argparse
+
+
+
+## Input argument parser
+parser = argparse.ArgumentParser(
+    description='CRO MXEval Test Release v1.0'
+    #epilog="End of test programm."
+)
+
+
+
+parser.add_argument("iRequestType",
+                    help="Select number 1 to process MXEval functionalities! (1)",
+                    type=int)
+
+args = parser.parse_args()
 
 
 
 
 def main():
+    parser.print_help()
     print('Hello World!')
     arg = input()
     print(arg)
